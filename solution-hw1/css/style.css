@@ -23,16 +23,22 @@
 }
 
 .description {
-    padding: 5px;
     width: 175px;
 }
 
-.price-cart {
+.price-cart, .checkout {
     text-align: center;
 }
 
-.add-cart {
+.add-cart-button, .checkout-button {
     background-color: yellow;
+}
+
+.cart {
+    margin-bottom: 50px;
+    width: 300px;
+    padding: 3px;
+    text-align: center;
 }
 
 
@@ -51,4 +57,8 @@
     width: 600px;
     border: 1px solid black;
     margin: 8px;
+}
+
+.shopping-cart-img {
+    width: 200px;
 }
