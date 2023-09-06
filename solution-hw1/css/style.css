@@ -1,56 +1,63 @@
+/* This is a universal selector */
 * {
     margin: 0px auto;
 }
 
+/* This is a paragraph selector */
 p {
     font-size: 20px;
     text-align: center;
 }
 
-.title {
+/* This is the selector for the link to the products and the cart page */
+.navigation {
     width: 500px;
     text-align: center;
     margin-bottom: 50px;
 }
 
+/* This is the selector for each product on the product gallery page */
 .product {
     margin-bottom: 50px;
     width: 420px;
 }
 
+/* This is the selector for the product on the product detail page */
 .product-detail {
     margin-bottom: 50px;
     width: 600px;
 }
 
+/* This is the selector to hover over products on the product gallery page */
 .product:hover{
     background-color: yellow;
     font-weight: bold;
 }
 
+/* This is the selector for the description on the product detail page */
 .description {
     width: 175px;
 }
 
+/* This is the selector for the cart total and checkout button section on the shopping cart page */
 .checkout {
-    /* width: 500px; */
-    /* margin-left: auto;
-    margin-right: auto; */
     text-align: center;
     margin: 20px;
-
 }
 
+/* This is the selector for the add to cart button */
 .add-cart-button {
     background-color: yellow;   
 }
 
+/* This is the selector for the final checkout button */
 .checkout-button {
     align-items: center;
     width: 100px;
     background-color: yellow;
 }
 
+/* This is the selector for the items in the shopping cart */
 .cart {
     margin-bottom: 50px;
     width: 300px;
@@ -58,28 +65,32 @@ p {
     text-align: center;
 }
 
+/* This is the selector for the items in the shopping cart */
 .dropdown {
     width: 175px;
 }
 
 
-/* images */
+/* logo image selector */
 .logo {
     width: 400px;
 }
 
+/* Selector for the products in the product gallery page */
 .product-img {
     width: 400px;
     border: 3px solid black;
     margin: 5px;
 }
 
+/* Selector for the product detail page image */
 .product-detail-img {
     width: 600px;
     border: 3px solid black;
     margin: 3px;
 }
 
+/* Selector for the images in the shopping cart page */
 .shopping-cart-img {
     width: 200px;
     border: 3px solid black;
