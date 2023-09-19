@@ -6,20 +6,45 @@
 /* This is a paragraph selector */
 p {
     font-size: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 /* This is the selector for the link to the products and the cart page */
 .navigation {
-    width: 500px;
-    text-align: center;
-    margin-bottom: 50px;
+    width: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.grid {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.grid-row {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.grid-column {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.line {
+    border: 2px solid black;
+    width: 800px;
 }
 
 /* This is the selector for each product on the product gallery page */
 .product {
     margin-bottom: 50px;
     width: 420px;
+    display: grid;
 }
 
 /* This is the selector for the product on the product detail page */
@@ -66,7 +91,7 @@ a:hover{
 /* This is the selector for the items in the shopping cart */
 .cart {
     margin-bottom: 50px;
-    width: 300px;
+    width: 700px;
     padding: 3px;
     text-align: center;
 }
