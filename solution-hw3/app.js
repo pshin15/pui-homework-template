@@ -1,4 +1,4 @@
-// object for  price adaptations based on glazing option
+// object for price adaptations based on glazing option
 let glazingOptions = {
     original: {
         price: 0,
@@ -17,7 +17,7 @@ let glazingOptions = {
         displayname: "Double chocolate"
     }
 }
-
+// object for price adaptations based on pack sizes option
 let packOptions = {
     1: {
         price: 1, 
@@ -37,8 +37,6 @@ let packOptions = {
     }
 }
 
-// glazingOptions.sugarmilk.price;
-
 let basePrice = 2.49;
 let glazingDropdown = document.getElementById("glazing-dropdown");
 let packDropdown = document.getElementById("pack-dropdown");
@@ -47,7 +45,7 @@ let packDropdown = document.getElementById("pack-dropdown");
 const optionarray = Object.entries(glazingOptions);
 
 for (element of optionarray){
-    console.log(element[1]);
+    // console.log(element[1]);
     let newoption = document.createElement('option');
     let display = document.createTextNode(element[1].displayname);
     newoption.appendChild(display);
@@ -58,7 +56,7 @@ for (element of optionarray){
 const packarray = Object.entries(packOptions);
 
 for (element of packarray){
-    console.log(element[1]);
+    // console.log(element[1]);
     let newpackoption = document.createElement('option');
     let display = document.createTextNode(element[1].displayname);
     newpackoption.appendChild(display);
@@ -66,15 +64,22 @@ for (element of packarray){
     packDropdown.appendChild(newpackoption);
 }
 
+// console.log(optionarray[0][1].price)
+// console.log(packarray[0][0]);
 
-function recompute(){
-    console.log("clicked");
-
-}
 
 function calculatePrice(){
-    final_price = (basePrice + glazingPrice) * packPrice
+    // for (element of packarray) {
+    //     final_price = (basePrice + element[1].price) * element[1].price
+    //     console.log(final_price)
+    // }
+    console.log("clicked");
+    final_price = (basePrice + optionarray[1].price) * packarray[1].price
+    console.log(final_price);
 }
+
+calculatePrice()
+
 
 // add to the UI
 // let option = document.createElement('option');
