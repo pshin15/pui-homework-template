@@ -38,8 +38,8 @@ let packOptions = {
 }
 
 let basePrice = 2.49;
-let glazingDropdown = document.getElementById("glazing-dropdown");
-let packDropdown = document.getElementById("pack-dropdown");
+let selectedGlazingOption = document.getElementById("glazing-dropdown").value;
+let selectedPackSizeOption = document.getElementById("pack-dropdown").value;
 
 //loop through the object. for every glzing option, we will create an <option> element and add to <select>
 const optionarray = Object.entries(glazingOptions);
@@ -64,8 +64,8 @@ for (element of packarray){
     packDropdown.appendChild(newpackoption);
 }
 
-// console.log(optionarray[0][1].price)
-// console.log(packarray[0][0]);
+let glazingoptionprice = glazingOptions[selectedGlazingOption].price;
+let packsizemultiplier = packOptions[selectedPackSizeOption].price;
 
 
 function calculatePrice(){
@@ -74,8 +74,8 @@ function calculatePrice(){
     //     console.log(final_price)
     // }
     console.log("clicked");
-    final_price = (basePrice + optionarray[1].price) * packarray[1].price
-    console.log(final_price);
+    final_price = (basePrice + glazingoptionprice) * packPrice
+    console.log(final_price)
 }
 
 calculatePrice()
