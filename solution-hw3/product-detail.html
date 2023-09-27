@@ -57,27 +57,24 @@
             <br><br>
           Glazing: 
             <br>
-          <select id="glazing-dropdown" onchange="recompute()">
+          <select id="glazing-dropdown" onchange="calculatePrice()">
           </select>
             <br><br>
           Pack size: 
             <br>
 
-          <select id="pack-dropdown" onchange="recompute()">
-            <!-- <option value="0">1</option>
-            <option value="1">3</option>
-            <option value="2">6</option>
-            <option value="3">12</option> -->
-          </select>
+          <select id="pack-dropdown" onchange="calculatePrice()"></select>
 
             <br><br><br>
 
-          <div class="checkout">
+          <div>
             $2.49 
             <button class="add-cart-button">Add to Cart</button>
           </div>
+            
         </div>
       </div>
+
     </div>
     <script src="./app.js"></script>
   </body>
