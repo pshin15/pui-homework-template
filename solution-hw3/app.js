@@ -79,13 +79,12 @@ function calculatePrice(){
 
     console.log("clicked");
     final_price = (basePrice + glazingPrice.price) * packSize.priceadapt;
-    // console.log(final_price);
+    console.log(final_price);
 
-    console.log(final_price)
-    final_price.textContent = `$${final_price.toFixed(2)}`;
+    totalprice.textContent = `$${final_price.toFixed(2)}`;
 }
 
-calculatePrice();
+// calculatePrice();
 
 
 // add to the UI
