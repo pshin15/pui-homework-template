@@ -13,7 +13,7 @@ let glazingOptions = {
         displayname: "Vanilla milk"
     },
     doublechocolate: {
-        price: 1.5,
+        price: 1.5, 
         displayname: "Double chocolate"
     }
 }
