@@ -84,13 +84,25 @@ function calculatePrice(){
     totalprice.textContent = `$${final_price.toFixed(2)}`;
 }
 
-// calculatePrice();
 
+cart = [];
 
-// add to the UI
-// let option = document.createElement('option');
-// option.innerHTML = glazingPriceTotal;
-// option.text = glazingPriceTotal;
-// selectElement.add(option);
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const rollType = params.get(`roll`);
 
-// selectElement.addEventListener('change', onSelectValueChange);
+// shows respective heading for each product page
+let heading = document.querySelector('#heading-title');
+heading.textContent = rolls[rollType].name;
+console.log(heading);
+
+// shows respective image for each product page
+let rollImage = rolls[rollType].imageFile;
+let productImage = document.querySelector('.product-detail-img');
+productImage.src = '../assets/products/' + rollImage;
+console.log(productImage.src); 
+
+// shows respective price for each product page
+let productPrice = document.querySelector('.checkout');
+productPrice.textContent = rolls[rollType].basePrice;
+console.log(productPrice);
