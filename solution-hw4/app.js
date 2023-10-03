@@ -84,9 +84,6 @@ function calculatePrice(){
     totalprice.textContent = `$${final_price.toFixed(2)}`;
 }
 
-
-cart = [];
-
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get(`roll`);
@@ -106,3 +103,25 @@ console.log(productImage.src);
 let productPrice = document.querySelector('.checkout');
 productPrice.textContent = rolls[rollType].basePrice;
 console.log(productPrice);
+
+
+cart = [];
+
+class Roll {
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing =  rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+    }
+}
+
+// let addCart = document.querySelector('.add-cart-button')
+
+function addtoCart() {
+    let rollGlazing = selectedGlazingOption.options[selectedGlazingOption.selectedIndex].text;
+    let packSize = selectedPackSizeOption.options[selectedPackSizeOption.selectedIndex].text;
+    const rollInstance = new Roll(rollType, rollGlazing, packSize, basePrice);
+    cart.push(rollInstance);
+    console.log(cart);
+}
