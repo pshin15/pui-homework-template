@@ -116,7 +116,34 @@ class Roll {
     }
 }
 
-// let addCart = document.querySelector('.add-cart-button')
+// 4 new Roll objects
+let original = {
+    type: "Original",
+    glazing: "Sugar Milk",
+    packSize: 1,
+    calculatedPrice: 2.49
+}
+
+let walnut = {
+    type: "Walnut",
+    glazing: "Vanilla Milk",
+    packSize: 12,
+    calculatedPrice: 39.9
+}
+
+let raisin = {
+    type: "Raisin",
+    glazing: "Sugar Milk",
+    packSize: 3,
+    calculatedPrice: 8.97
+}
+
+let apple = {
+    type: "Apple",
+    glazing: "Original",
+    packSize: 3,
+    calculatedPrice: 10.47
+}
 
 function addtoCart() {
     let rollGlazing = selectedGlazingOption.options[selectedGlazingOption.selectedIndex].text;
