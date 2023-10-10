@@ -1,6 +1,10 @@
 /* This is a universal selector */
 * {
-    margin: 0px auto;
+    /* margin: 5px; */
+}
+
+a {
+    text-align: left;
 }
 
 /* This is a paragraph selector */
@@ -10,11 +14,20 @@ p {
 }
 
 /* This is the selector for the link to the products and the cart page */
-.navigation {
-    width: 300px;
+nav {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    /* align-items: flex-end; */
+    justify-content: space-around;
+}
+
+.header {
+    display: flex;
+    padding: 20px;
+}
+
+.total {
+    display: flex;
+    justify-content: center;
 }
 
 .grid {
@@ -25,19 +38,44 @@ p {
 .grid-row {
     display: flex;
     justify-content: flex-end;
-    flex-direction: row;
+    flex-direction: column;
     flex-grow: 1;
 }
 
-.grid-column {
+.text {
     display: flex;
-    justify-content: flex-start;
+    margin: 20px; 
     flex-direction: column;
 }
 
-.line {
+.cart-items{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+}
+
+.one-cart-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.one-cart-item-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.one-cart-item-price-remove {
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
     border: 2px solid black;
-    width: 800px;
+    /* width: 100px; */
 }
 
 /* This is the selector for each product on the product gallery page */

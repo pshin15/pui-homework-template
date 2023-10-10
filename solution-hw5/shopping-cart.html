@@ -4,105 +4,62 @@
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="cart.js" defer></script>
   </head>
 
 
   <body>
-    <div class="grid">
+    <div class="header">
+      <div class="logo">
+        <a href="./index.html">
+          <img
+            src="../assets/logo/logo-01.svg" 
+            alt="Bun Bun Bake Shop logo">
+        </a>
+      </div>
 
-      <a href="./index.html">
-        <img
-          src="../assets/logo/logo-01.svg" 
-          class="logo"
-          alt="Bun Bun Bake Shop logo">
-      </a>
+      <div class="navigation-header">
+        <nav">
+          <a href="./index.html">PRODUCTS</a> 
+          <a href="./shopping-cart.html">CART</a>
+      </nav>  
 
-      <div class="grid-column">
-
-        <br><br>
-
-        <div class="grid">
-          <div class="navigation">
-            <a href="./index.html">PRODUCTS</a> 
-            <a href="./shopping-cart.html">CART</a>
-          </div>  
-        </div>
-
-        <br><br>
-
-        <hr class="line">
-
-        <br><br><br>
+        <hr>
 
         <div class="grid-row">
-          <p>Shopping cart</p>
+          <h1>Shopping cart</h1>
         </div>
+      </div>
+    </div>
+    
+  <!-- for cinnamon roll item -->
+  <div class="cart-items">
+    <template class="cart-template">
+      <div class="one-cart-item-price-remove">
+        <div class="one-cart-item-price">
+          <div class="one-cart-item">
+            <img 
+              src="../assets/products/original-cinnamon-roll.jpg" 
+              id="shopping-cart-img" 
+              alt="Original cinnamon roll">
 
-        <br><br><br><br>
-
-        <!-- for cinnamon roll item -->
-        <div class="grid">
-          <div class="cart">
-            <div class="grid">
-              <div class="grid-column">
-                <img 
-                  src="../assets/products/original-cinnamon-roll.jpg" 
-                  class="shopping-cart-img" 
-                  alt="Original cinnamon roll">
-                <a href="">Remove</a>
-              </div>
-
-              <div class="grid-column">
-                <p>
-                  Original Cinnamon Roll<br>
-                  Glazing: Keep original<br>
-                  Pack Size: 1
-                </p>
-              </div>
-
-              <div class="grid-column">
-                <p>$2.49</p>
-              </div>
+            <div class="text">
+              <p class="item-name"></p>
+              <p class="item-glazing"></p>
+              <p class="item-pack-size"></p>
             </div>
           </div>
+          <p class="item-price"></p> 
         </div>
+        <a href="">Remove</a>
+      </div>
+    </template>
+  </div>
 
-        <!-- for choc. cinnamon roll item -->
-        <div class="grid">
-          <div class="cart">
-            <div class="grid">
-              <div class="grid-column">
-                <img 
-                src="../assets/products/double-chocolate-cinnamon-roll.jpg" 
-                class="shopping-cart-img"
-                  alt="Chocolate cinnamon roll">
-                  <br>
-                <a href="">Remove</a>
-              </div>
-
-              <div class="grid-column">
-                <p>
-                  Double Chocolate Cinnamon Roll<br>
-                  Glazing: Sugar milk<br>
-                  Pack Size: 6
-                </p>
-              </div>
-
-              <div class="grid-column">
-                <p>$27.45</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid">
-          <hr class="line">
-        </div>
-
-        <br><br>
+      <hr>
 
         <!-- for total button -->
-        <div class="navigation">
+        <div class="total">
           <p>Total:</p>
           <p>$29.94</p>
         </div>
