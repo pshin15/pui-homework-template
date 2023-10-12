@@ -53,11 +53,10 @@ cart.push(apple);
 function createElement(roll){
     let template = document.querySelector(".cart-template");
     let clone = template.content.cloneNode(true);
-    // console.log(clone);
 
     roll.element = clone;
 
-    rollelement = clone.querySelector(".one-cart-item-price-remove");
+    let rollelement = clone.querySelector(".one-cart-item-price-remove");
     // console.log(rollelement);
     // let rollImage = document.querySelector("#shopping-cart-img");
 
@@ -66,10 +65,7 @@ function createElement(roll){
     let itemGlazing = clone.querySelector(".item-glazing");
     let itemPackSize = clone.querySelector(".item-pack-size");
     let itemPrice = clone.querySelector(".item-price");
-    // console.log(itemPrice);  
     
-    // console.log(roll);
-
     rollImage.src = "../assets/products/" + roll.type.toLowerCase() + "-cinnamon-roll.jpg";
 
     itemName.innerHTML = roll.type + " Cinnamon Roll";
@@ -83,6 +79,9 @@ function createElement(roll){
         deleteItem(roll);
     });
 
+    let cartItems = document.querySelector(".cart-items");
+    cartContainer.appendChild(clone);
+
 }
 
 function deleteItem(roll) {
@@ -90,8 +89,6 @@ function deleteItem(roll) {
     roll.element.remove();
     cart.splice(index, 1);
 }
-
-// createElement(original);
 
 // For each item in your cart, call your function from Step 4 and display the items on the shopping cart page
 for (let roll of cart){
@@ -106,5 +103,5 @@ function updateTotalPrice() {
     }
 
     const totalprice = document.querySelector(".checkout");
-    totalprice.textContent == `$${totalPrice.toFixed(2)}`;
+    totalprice.textContent = `$${totalPrice.toFixed(2)}`;
 }
