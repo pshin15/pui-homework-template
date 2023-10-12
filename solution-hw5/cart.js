@@ -1,27 +1,39 @@
-let cart = [];
+const cart = [];
+
+let glazingPrices = {
+    'original': 0,
+    'sugarmilk': 0,
+    'vanillamilk': 0.5,
+    'doublechocolate': 1.5
+}
+
+let packOptions = {
+    1: 1, 
+    3: 3, 
+    6: 5,
+    12: 10
+}
 
 class Roll {
     constructor(rollType, rollGlazing, packSize, basePrice) {
         this.type = rollType;
-        this.glazing =  rollGlazing;
+        this.glazing = rollGlazing;
         this.size = packSize;
         this.basePrice = basePrice;
     }
 
     calculatePrice(){
-        let selectedGlazing = selectedGlazingOption.value;
-        let selectedPackSize = selectedPackSizeOption.value;
+        let glazingPrice = glazingPrices[this.glazing];
+        let packPrice = packOptions[this.size];
 
-        let glazingPrice = glazingOptions[selectedGlazing];
-        let packSize = packOptions[selectedPackSize];
-
-        console.log("clicked");
-        final_price = (basePrice + glazingPrice.price) * packSize.priceadapt;
+        let final_price = (this.basePrice + glazingPrice) * packPrice;
         console.log(final_price);
 
-        totalprice.textContent = `$${final_price.toFixed(2)}`;
+        // totalprice.textContent = `$${final_price.toFixed(2)}`;
     }
 }
+
+
 
 // 4 new Roll objects
 let original = new Roll("Original", "Sugar Milk", 1, 2.49); 
@@ -34,41 +46,65 @@ cart.push(walnut);
 cart.push(raisin);
 cart.push(apple);
 
-console.log(cart);
+// console.log(cart);
 
 
-// function addtoCart() {
-//     const rollInstance = new Roll(rollType, rollGlazing, packSize, basePrice);
-//     cart.push(rollInstance);
-//     console.log(cart);
-// }
-
-// let cartItems = document.querySelector(".cart-items");
 
 function createElement(roll){
     let template = document.querySelector(".cart-template");
- 
     let clone = template.content.cloneNode(true);
+    // console.log(clone);
 
-    roll.element = clone.querySelector(".one-cart-item-price-remove")
+    roll.element = clone;
 
+    rollelement = clone.querySelector(".one-cart-item-price-remove");
+    // console.log(rollelement);
     // let rollImage = document.querySelector("#shopping-cart-img");
 
-    let itemName = document.querySelector(".item-name");
-    console.log(itemName);
+    let rollImage = clone.querySelector("#shopping-cart-img");
+    let itemName = clone.querySelector(".item-name");  
+    let itemGlazing = clone.querySelector(".item-glazing");
+    let itemPackSize = clone.querySelector(".item-pack-size");
+    let itemPrice = clone.querySelector(".item-price");
+    // console.log(itemPrice);  
     
-    let itemGlazing = document.querySelector(".item-glazing");
-    let itemPackSize = document.querySelector(".item-pack-size");
-    let itemPrice = document.querySelector(".item-price");
+    // console.log(roll);
 
-    // rollImage.src = "../assets/products/" + roll.type.toLowerCase() + "-cinnamon-roll.jpg";
+    rollImage.src = "../assets/products/" + roll.type.toLowerCase() + "-cinnamon-roll.jpg";
 
     itemName.innerHTML = roll.type + " Cinnamon Roll";
-    console.log(itemName);
+    // console.log(itemName);
+
+    // let totalPrice = parseFloat(Roll.calculatePrice());
+
+    let itemRemove = clone.querySelector("#item-remove");
+    // console.log(itemRemove);
+    itemRemove.addEventListener('click', () => {
+        deleteItem(roll);
+    });
+
 }
 
-createElement(original);
+function deleteItem(roll) {
+    const index = cart.indexOf(roll);
+    roll.element.remove();
+    cart.splice(index, 1);
+}
 
-for (let roll in cart){
+// createElement(original);
+
+// For each item in your cart, call your function from Step 4 and display the items on the shopping cart page
+for (let roll of cart){
     createElement(roll)
+}
+
+function updateTotalPrice() {
+    let totalPrice = 0;
+    
+    for (let roll of cart) {
+        totalPrice = totalPrice + roll.calculatePrice();
+    }
+
+    const totalprice = document.querySelector(".checkout");
+    totalprice.textContent == `$${totalPrice.toFixed(2)}`;
 }
