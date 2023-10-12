@@ -54,9 +54,7 @@ function createElement(roll){
     let template = document.querySelector(".cart-template");
     let clone = template.content.cloneNode(true);
 
-    roll.element = clone;
-
-    let rollelement = clone.querySelector(".one-cart-item-price-remove");
+    roll.element = clone.querySelector(".one-cart-item-price-remove");
     // console.log(rollelement);
     // let rollImage = document.querySelector("#shopping-cart-img");
 
@@ -69,18 +67,16 @@ function createElement(roll){
     rollImage.src = "../assets/products/" + roll.type.toLowerCase() + "-cinnamon-roll.jpg";
 
     itemName.innerHTML = roll.type + " Cinnamon Roll";
-    // console.log(itemName);
 
     // let totalPrice = parseFloat(Roll.calculatePrice());
 
     let itemRemove = clone.querySelector("#item-remove");
-    // console.log(itemRemove);
     itemRemove.addEventListener('click', () => {
         deleteItem(roll);
     });
 
     let cartItems = document.querySelector(".cart-items");
-    cartContainer.appendChild(clone);
+    cartItems.appendChild(clone);
 
 }
 
