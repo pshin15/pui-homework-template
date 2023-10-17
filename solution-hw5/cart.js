@@ -55,8 +55,6 @@ function createElement(roll){
     let clone = template.content.cloneNode(true);
 
     roll.element = clone.querySelector(".one-cart-item-price-remove");
-    // console.log(rollelement);
-    // let rollImage = document.querySelector("#shopping-cart-img");
 
     let rollImage = clone.querySelector("#shopping-cart-img");
     let itemName = clone.querySelector(".item-name");  

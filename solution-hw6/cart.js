@@ -166,12 +166,24 @@ cart.push(apple);
 // console.log(cart);
 
 
+function deleteItem(roll) {
+    // Assuming `roll` is the item to be removed
+    const index = cart.indexOf(roll);
+    if (index !== -1) {
+        cart.splice(index, 1);
+        // Optionally, you can also remove the item from the DOM
+        roll.element.remove();
+        // Update the total price
+        updateTotalPrice();
+    }
+}
+
 
 function createElement(roll){
     let template = document.querySelector(".cart-template");
     let clone = template.content.cloneNode(true);
 
-    // roll.element = clone.querySelector(".one-cart-item-price-remove");
+    roll.element = clone.querySelector(".one-cart-item-price-remove");
 
     let rollImage = clone.querySelector("#shopping-cart-img");
     let itemName = clone.querySelector(".item-name");  
@@ -189,8 +201,8 @@ function createElement(roll){
         deleteItem(roll);
     });
 
-    const cartContainer = clone.querySelector(".cart-items");
-    cartContainer.appendChild(clone);
+    let cartItems = clone.querySelector(".cart-items");
+    cartItems.appendChild(clone);
 }
 
 function populateCart() {
@@ -225,13 +237,4 @@ function addtoCart() {
 
     // populateCart();
     // updateTotalPrice();
-}
-
-
-function deleteItem(roll) {
-    const index = cart.indexOf(roll);
-    roll.element.remove();
-    cart.splice(index, 1);
-    saveToLocalStorage(); 
-    updateTotalPrice();
 }
