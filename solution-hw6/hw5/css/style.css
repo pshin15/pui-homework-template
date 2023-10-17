@@ -1,0 +1,166 @@
+/* This is a universal selector */
+* {
+    /* margin: 5px; */
+}
+
+a {
+    text-align: left;
+}
+
+/* This is a paragraph selector */
+p {
+    font-size: 20px;
+    text-align: left;
+}
+
+/* This is the selector for the link to the products and the cart page */
+nav {
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: space-around;
+}
+
+.header {
+    display: flex;
+    padding: 20px;
+}
+
+.total {
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.grid-row {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.text {
+    display: flex;
+    margin: 20px; 
+    flex-direction: column;
+}
+
+.cart-items{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+}
+
+.one-cart-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.one-cart-item-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.one-cart-item-price-remove {
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    border: 2px solid black;
+    /* width: 100px; */
+}
+
+/* This is the selector for each product on the product gallery page */
+.product {
+    margin-bottom: 50px;
+    width: 420px;
+    display: grid;
+}
+
+/* This is the selector for the product on the product detail page */
+.product-detail {
+    margin-bottom: 50px;
+    width: 600px;
+}
+
+/* This is the selector to hover over products on the product gallery page */
+.product:hover{
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* This is the selector to hover over products in the navigation bar */
+a:hover{
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* This is the selector for the description on the product detail page */
+.description {
+    width: 175px;
+}
+
+/* This is the selector for the cart total and checkout button section on the shopping cart page */
+.checkout {
+    text-align: center;
+    margin: 20px;
+}
+
+/* This is the selector for the add to cart button */
+.add-cart-button {
+    background-color: yellow;   
+}
+
+/* This is the selector for the final checkout button */
+.checkout-button {
+    align-items: center;
+    width: 100px;
+    background-color: yellow;
+}
+
+/* This is the selector for the items in the shopping cart */
+.cart {
+    margin-bottom: 50px;
+    width: 700px;
+    padding: 3px;
+    text-align: center;
+}
+
+/* This is the selector for the items in the shopping cart */
+.dropdown {
+    width: 175px;
+}
+
+
+/* logo image selector */
+.logo {
+    width: 400px;
+}
+
+/* Selector for the products in the product gallery page */
+.product-img {
+    width: 400px;
+    border: 3px solid black;
+    margin: 5px;
+}
+
+/* Selector for the product detail page image */
+.product-detail-img {
+    width: 600px;
+    border: 3px solid black;
+    margin: 3px;
+}
+
+/* Selector for the images in the shopping cart page */
+.shopping-cart-img {
+    width: 200px;
+    border: 3px solid black;
+}
