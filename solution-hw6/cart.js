@@ -70,19 +70,19 @@ let glazingoptionprice = glazingOptions[selectedGlazingOption];
 let packsizemultiplier = packOptions[selectedPackSizeOption];
 
 
-// function calculatePrice(){
-//     let selectedGlazing = selectedGlazingOption.value;
-//     let selectedPackSize = selectedPackSizeOption.value;
+function calculatePrice(){
+    let selectedGlazing = selectedGlazingOption.value;
+    let selectedPackSize = selectedPackSizeOption.value;
 
-//     let glazingPrice = glazingOptions[selectedGlazing];
-//     let packSize = packOptions[selectedPackSize];
+    let glazingPrice = glazingOptions[selectedGlazing];
+    let packSize = packOptions[selectedPackSize];
 
-//     console.log("clicked");
-//     final_price = (basePrice + glazingPrice.price) * packSize.priceadapt;
-//     console.log(final_price);
+    console.log("clicked");
+    final_price = (basePrice + glazingPrice.price) * packSize.priceadapt;
+    console.log(final_price);
 
-//     totalprice.textContent = `$${final_price.toFixed(2)}`;
-// }
+    totalprice.textContent = `$${final_price.toFixed(2)}`;
+}
 
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
@@ -171,9 +171,7 @@ function createElement(roll){
     let template = document.querySelector(".cart-template");
     let clone = template.content.cloneNode(true);
 
-    roll.element = clone.querySelector(".one-cart-item-price-remove");
-    // console.log(rollelement);
-    // let rollImage = document.querySelector("#shopping-cart-img");
+    // roll.element = clone.querySelector(".one-cart-item-price-remove");
 
     let rollImage = clone.querySelector("#shopping-cart-img");
     let itemName = clone.querySelector(".item-name");  
@@ -182,7 +180,6 @@ function createElement(roll){
     let itemPrice = clone.querySelector(".item-price");
     
     rollImage.src = "../assets/products/" + roll.type.toLowerCase() + "-cinnamon-roll.jpg";
-
     itemName.innerHTML = roll.type + " Cinnamon Roll";
 
     // let totalPrice = parseFloat(Roll.calculatePrice());
@@ -192,15 +189,15 @@ function createElement(roll){
         deleteItem(roll);
     });
 
-    let cartItems = document.querySelector(".cart-items");
-    cartItems.appendChild(clone);
+    const cartContainer = clone.querySelector(".cart-items");
+    cartContainer.appendChild(clone);
 }
 
 function populateCart() {
     const cartContainer = document.querySelector(".cart-items");
     cartContainer.innerHTML = '';
 
-// For each item in your cart, call your function from Step 4 and display the items on the shopping cart page
+    // For each item in your cart, call your function from Step 4 and display the items on the shopping cart page
     for (let roll of cart) {
         createElement(roll);
     }
@@ -219,11 +216,15 @@ function updateTotalPrice() {
 }
 
 function addtoCart() {
+
     let rollGlazing = selectedGlazingOption.options[selectedGlazingOption.selectedIndex].text;
     let packSize = selectedPackSizeOption.options[selectedPackSizeOption.selectedIndex].text;
     const rollInstance = new Roll(rollType, rollGlazing, packSize, basePrice);
     cart.push(rollInstance);
     console.log(cart);
+
+    // populateCart();
+    // updateTotalPrice();
 }
 
 
@@ -232,6 +233,6 @@ function deleteItem(roll) {
     roll.element.remove();
     cart.splice(index, 1);
     saveToLocalStorage(); 
-    populateCart();
+    // populateCart();
     updateTotalPrice();
 }
