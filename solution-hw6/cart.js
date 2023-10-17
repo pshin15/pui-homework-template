@@ -233,6 +233,5 @@ function deleteItem(roll) {
     roll.element.remove();
     cart.splice(index, 1);
     saveToLocalStorage(); 
-    // populateCart();
     updateTotalPrice();
 }
