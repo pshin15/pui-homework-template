@@ -125,3 +125,20 @@ function addtoCart() {
     cart.push(rollInstance);
     console.log(cart);
 }
+
+// const cart = [];
+
+// const chosenItem = new Roll(rollType, rollGlazing, packSize, basePrice);
+
+// cart.push(chosenItem);
+// console.log(cart);
+
+// // let addCart = document.querySelector('.add-cart-button')
+
+// function addtoCart() {
+//     let rollGlazing = selectedGlazingOption.options[selectedGlazingOption.selectedIndex].text;
+//     let packSize = selectedPackSizeOption.options[selectedPackSizeOption.selectedIndex].text;
+//     const rollInstance = new Roll(rollType, rollGlazing, packSize, basePrice);
+//     cart.push(rollInstance);
+//     console.log(cart);
+// }
